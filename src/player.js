@@ -16,11 +16,11 @@ class Player {
     this.image = document.createElement('img')//new Image();
     this.image.src = "images/plant_state_0.png";
     /*this.plantImage1 = new Image();
-    this.plantImage1.src = "images/plantStates_1.png";
+    this.plantImage1.src = "images/plant_state_3 (1).png";
     this.plantImage2 = new Image();
-    this.plantImage2.src = "images/plantStates_2.png";
+    this.plantImage2.src = "images/plant_state_5.png";
     this.plantImage3 = new Image();
-    this.plantImage3.src = "images/plantStates_3.png"; */
+    this.plantImage3.src = "images/plant_state_8.png";*/
   }
 
   setDirection(direction) {
@@ -34,12 +34,12 @@ class Player {
   }
 
   draw() {
-    //if(this.lives > 10) {
-      this.ctx.drawImage(this.image, this.x, this.y, this.width, this. height)
-    //} else if (this.lives < 5) {
-    //  this.ctx.drawImage(this.plantImage2, this.x, this.y, this.width, this. height)
-    }
-  //}
+    if(lives < 10) {
+      //this.ctx.drawImage(this.image, this.x, this.y, this.width, this. height)
+    //} else {
+      //this.ctx.drawImage(this.plantImage2, this.x, this.y, this.width, this. height)
+  }
+  
 
 
   updatePosition() {
