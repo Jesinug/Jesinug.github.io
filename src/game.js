@@ -26,7 +26,6 @@ class Game {
     this.canvas.setAttribute("height", this.containerHeight);
 
     this.player = new Player(this.canvas, 5, "images/plant_state_0.png");
-    console.log(this.player)
 
     function handleKeyDown(event) {
       if (event.keyCode === 39) {
@@ -74,11 +73,6 @@ class Game {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
       this.player.draw();
-      /*if(this.lives >= 10) {
-        this.player.draw(this.lives) 
-      } else {
-        this.player.draw()
-      }*/
 
       this.drops.forEach((enemy) => {
         enemy.draw();
