@@ -1,6 +1,6 @@
 class Player {
 
-  constructor(canvas, lives) {
+  constructor(canvas, lives, image) {
     this.canvas = canvas; // main canvas, html element
     this.ctx = this.canvas.getContext("2d"); // way to interact with canvas
     this.lives = lives; // 
@@ -14,7 +14,7 @@ class Player {
     this.speed = 7; // it's speed movement
 
     this.image = document.createElement('img')//new Image();
-    this.image.src = "images/plant_state_0.png";
+    this.image.src = image;
     /*this.plantImage1 = new Image();
     this.plantImage1.src = "images/plantStates_1.png";
     this.plantImage2 = new Image();
@@ -64,11 +64,30 @@ class Player {
 
   removeLife() {
     this.lives -= 1;
+    this.plantShrink();
   }
 
   addLife() {
     this.lives += 1;
+    this.planGrowth();
+  }
 
+  planGrowth(){
+    setTimeout(this.drawNewIconPlant("images/plant_state_3.png"), 100000000000000000000)
+    setTimeout(this.drawNewIconPlant("images/plant_state_5.png"), 10000000000000000000000)
+    setTimeout(this.drawNewIconPlant("images/plant_state_8.png"), 10000000000000000000000000)
+  }
+
+  plantShrink(){
+    this.image.src  = "images/plant_state_5.png";
+    //espere medio segundo
+    this.image.src  = "images/plant_state_3.png";
+    //espere medio segundo
+    this.image.src  = "images/plant_state_0.png";
+  }
+
+  drawNewIconPlant(image){
+    this.image.src  = image;
   }
 
 

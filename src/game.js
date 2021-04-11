@@ -92,7 +92,7 @@ class Game {
       if (this.player.didCollide(enemy)) {
       
       if (enemy.type === 'enemy') { 
-        this.player.removeLife(); 
+        this.player.removeLife();
       } else {
         this.player.addLife();
       }
